@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Wpf_WeatherUI.TopTempCity"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:HumWin="clr-namespace:Wpf_WeatherUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <!-- main grid -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <!-- left data -->
+            <Grid Background="Black" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- grid for temp value and units -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lbl_TopTempVal" FontWeight="Bold" Foreground="White" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="50"></Label>
+                <Label x:Name="lbl_TopTempUnit" FontWeight="Bold" Foreground="White" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="50">C</Label>
+                </Grid>
+                <Label x:Name="lbl_TopCity" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="50" Grid.Row="1" >
+                    <AccessText TextWrapping="WrapWithOverflow">
+                        
+                    </AccessText>
+                </Label>
+                </Grid>
+            <!-- right data -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+            <Viewbox Stretch="Fill">
+                <Image x:Name="img_Weather"  Grid.Row="0"/>
+            </Viewbox>
+            <HumWin:HumidSpeedData x:Name="cstm_humidSpeed" Grid.Row="1" />
+            </Grid>
+        </Grid>
+</UserControl>

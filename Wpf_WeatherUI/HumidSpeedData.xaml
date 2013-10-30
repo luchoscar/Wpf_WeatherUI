@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Wpf_WeatherUI.HumidSpeedData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="grd_Humid" Background="DarkCyan">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lbl_humIcon" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" >
+            <Image Source="Images/humid_temp3.png" />
+        </Label>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="lbl_humVal" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" Foreground="White" Grid.Row="0"></Label>
+            <Label x:Name="lbl_humUnits" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" Grid.Row="1">MM</Label>
+        </Grid>
+        <Label x:Name="lbl_windIcon" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2">
+            <Image Source="Images/wind_light-512.png" />
+        </Label>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label x:Name="lbl_windVal" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" Foreground="White" Grid.Row="0"></Label>
+            <Label x:Name="lbl_windUnits" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" Grid.Row="1">MPH</Label>
+        </Grid>
+    </Grid>
+</UserControl>
+
+    
